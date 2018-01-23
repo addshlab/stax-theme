@@ -1,0 +1,373 @@
+/*
+Theme Name: Stax
+Theme URI:
+Author:
+Author URI:
+Description:
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: stax
+Tags: blog, one-column
+*/
+
+/**
+ * @see https://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ *
+ */
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+        white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+
+/**
+ * 8.0 Alignments
+ */
+.alignleft {
+	display: inline;
+	float: left;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+	margin: 0.4em 1.6em 1.6em 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+	margin: 0.4em 0 1.6em 1.6em;
+}
+
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+	clear: both;
+	margin-top: 0.4em;
+	margin-bottom: 1.6em;
+}
+
+/**
+ * 14.1 Captions
+ */
+.wp-caption {
+	margin-bottom: 1.6em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0;
+}
+
+.wp-caption-text {
+	color: #707070;
+	color: rgba(51, 51, 51, 0.7);
+	font-family: "Noto Sans", sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	padding: 0.5em 0;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+	margin-bottom: 1.2em;
+}
+
+.aligncenter {
+}
+
+.alignleft {
+
+}
+
+.alignright {
+
+}
+
+.wp-caption {
+
+}
+
+.wp-caption-text {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+
+}
+
+body {
+	margin: 50px 0 50px 50px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+	line-height: 1.7;
+	word-break: break-all;
+	max-width: 1024px;
+}
+
+a:link {
+	text-decoration: none;
+	color: #006699;
+}
+
+a:visited {
+	color: #666666;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: #006699;
+	text-decoration: underline;
+}
+
+header.global {
+	margin: 0 0 30px 0;
+	font-weight: bold;
+}
+
+header.global h1,
+header.global p {
+	font-size: 200%;
+	font-weight: bold;
+}
+
+header.global a:visited {
+	color: #006699;
+}
+
+main {
+}
+
+article {
+	margin-bottom: 50px;
+}
+
+article table {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+article table::-webkit-scrollbar {
+	height: 5px;
+}
+
+article table::-webkit-scrollbar-track {
+	background: #F1F1F1;
+}
+
+article table::-webkit-scrollbar-thumb {
+	background: #BCBCBC;
+}
+
+.sticky .title:before {
+	content: "\f537";
+    display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 20px/1 'dashicons';
+	vertical-align: middle;
+}
+
+header .title {
+	margin: 10px 0;
+	font-weight: bold;
+}
+
+.single header .title,
+.page header .title {
+	margin: 30px 0 30px 0;
+}
+
+.paginate_links {
+	margin: 0 0 30px 0;
+}
+
+.page-numbers {
+	padding: 0 3px;	
+}
+
+.page-numbers.current {
+	font-weight: bold;
+}
+
+footer {
+}
+
+footer nav {
+	text-align: left;
+}
+
+footer nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+footer nav ul li {
+}
+
+footer nav ul li li {
+	border-bottom: none;
+}
+
+footer nav ul ul.children {
+	margin: 0;
+	padding-left: 1em;
+}
+
+footer nav ul li li:before {
+	content: "\f345";
+    display: inline;
+	-webkit-font-smoothing: antialiased;
+	font: normal 15px/1 'dashicons';
+	vertical-align: middle;
+}
+
+footer nav ul ul ul.children {
+}
+
+footer nav ul ul ul.children li:before {
+	content: "\f139";
+    display: inline;
+	-webkit-font-smoothing: antialiased;
+	font: normal 15px/1 'dashicons';
+	vertical-align: middle;
+
+}
+
+/**
+ * 幅の狭い画面
+ */
+
+@media screen and (max-width:500px) {
+	body {
+		margin: 20px 20px 50px 20px;
+	}
+}
+
+
