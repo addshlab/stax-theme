@@ -69,6 +69,7 @@ add_action( 'wp_default_styles', 'default_style_fingerprint' );
 function custom_theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'custom-logo' );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 
@@ -107,15 +108,29 @@ add_filter( 'pre_get_document_title', 'wpdocs_hack_wp_title_for_home' );
  * ウィジェットエリアの定義
  */
 function theme_slug_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Footer menu(Stax Theme)', 'stax' ),
-		'id' => 'footer-menu',
-		'description' => __( 'Display menu to footer.', 'stax' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widgettitle">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name' => __( 'Footer menu(Stax Theme)', 'stax' ),
+			'id' => 'footer-menu',
+			'description' => __( 'Display menu to footer.', 'stax' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Sidebar menu(Stax Theme)', 'stax' ),
+			'id' => 'sidebar-menu',
+			'description' => __( 'Display menu to sidebar.', 'stax' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+		)
+
+	);
 }
 add_action( 'widgets_init', 'theme_slug_widgets_init' );
 

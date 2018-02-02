@@ -8,7 +8,7 @@
 <html <?php language_attributes(); ?>>
 	<head profile="http://gmpg.org/xfn/11">
 		<meta charset=<?php bloginfo('charset'); ?>>
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
+		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php echo date( 'U' ); ?>" type="text/css" media="all" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
@@ -23,13 +23,19 @@
  */
 ?>
 
-<header class="global">
+<header class="global header">
 	<?php if ( is_home() || is_front_page() ) : ?>
 	<h1>
 	<?php else : ?>
 	<p>
 	<?php endif; ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<?php if ( has_custom_logo() ) : ?>
+		<?php the_custom_logo(); ?>
+		<?php else : ?>
+		<?php bloginfo( 'name' ); ?>
+		<?php endif; ?>
+		</a>
 	<?php if ( is_home() || is_front_page() ) : ?>
 	</h1>
 	<?php else : ?>
@@ -45,7 +51,7 @@
  * 検索: search.php > index.php
  */
 ?>
-<main>
+<main class="main">
 
 <?php if ( is_404() ) : ?>
 		<article>
@@ -70,9 +76,6 @@
 					<?php if ( mb_strlen( get_the_title() ) === 0 ) : echo '(no title)' ; else : the_title(); endif; ?>
 				</h1>
 				<?php else : ?>
-				<time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>">
-					<?php the_time( 'Y-m-d' ); ?>
-				</time>
 				<h2 class="title">
 					<a href="<?php the_permalink(); ?>">
 						<?php echo mb_substr( get_the_title(), 0, 100 ); ?><?php if ( mb_strlen( get_the_title() ) === 0 ) : echo '(no title)' ; elseif ( mb_strlen( get_the_title() ) >= 100 ) : echo ' ...'; endif; ?>
@@ -123,13 +126,27 @@
 	</nav>
 
 </main>
+
+<?php
+/**
+ * サイドバー
+ * 一般的にsidebar.phpに含められる
+ */
+?>
+<?php if ( is_active_sidebar( 'sidebar-menu' ) ) : ?>
+<aside class="sidebar">
+		<?php dynamic_sidebar( 'sidebar-menu' ); ?>
+</aside>
+<?php endif; ?>
+
+
 <?php
 /**
  * グローバルフッタ
  * 一般的にfooter.phpに含められる
  */
 ?>
-<footer>
+<footer class="global footer">
 	<nav>
 
 <?php if ( is_active_sidebar( 'footer-menu' ) ) : ?>

@@ -225,7 +225,12 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	line-height: 1.7;
 	word-break: break-all;
-	max-width: 1024px;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+body > * {
+	flex: 1 100%;
 }
 
 a:link {
@@ -252,6 +257,7 @@ header.global {
 
 header.global h1,
 header.global p {
+	margin: 0;
 	font-size: 200%;
 	font-weight: bold;
 }
@@ -260,7 +266,9 @@ header.global a:visited {
 	color: #006699;
 }
 
-main {
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 article {
@@ -296,12 +304,40 @@ article table::-webkit-scrollbar-thumb {
 
 header .title {
 	margin: 10px 0;
-	font-weight: bold;
+	font-weight: normal;
+	font-size: 110%;
+}
+
+/**
+ * 最低限のボックスでflexbox
+ * see https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ * see https://codepen.io/chriscoyier/pen/vWEMWw
+ */
+@media all and (min-width: 600px) {
+	.sidebar {
+		flex: 1 auto;
+	}
+}
+
+@media all and (min-width: 800px) {
+	.main {
+		flex: 2 0px;
+		order: 1;
+	}
+	.sidebar {
+		order: 2;
+		margin-left: 30px;
+	}
+	.global.footer {
+		order: 3;
+	}
 }
 
 .single header .title,
 .page header .title {
 	margin: 30px 0 30px 0;
+	font-weight: normal;
+	font-size: 120%;
 }
 
 .paginate_links {
@@ -366,7 +402,9 @@ footer nav ul ul ul.children li:before {
 
 @media screen and (max-width:500px) {
 	body {
-		margin: 20px 20px 50px 20px;
+		margin: 0;
+		padding: 10px;
+		display: block;
 	}
 }
 
