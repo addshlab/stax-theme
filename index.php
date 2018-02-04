@@ -96,7 +96,9 @@
 			<?php the_tags(); ?>
 			<?php else : ?>
 			<div class="excerpt">
-					<?php echo mb_substr( strip_tags( get_the_content() ), 0, 150 ); ?><?php if ( mb_strlen( strip_tags( get_the_content() ) ) === 0 ) : echo '(no content)' ; elseif ( mb_strlen( strip_tags( get_the_content() ) ) >= 150 ) : echo ' ...'; endif; ?>
+					<?php $str_count = mb_strlen( strip_tags( get_the_content() ) ); ?>
+					<?php echo mb_substr( strip_tags( get_the_content() ), 0, 10 ); ?><?php if ( $str_count === 0 ) : echo '(no content)' ; elseif ( $str_count >= 10 ) : echo ' ...'; endif; ?>
+					<?php echo $str_count . 'words.' ?>
 				</div>
 			<?php endif; ?>
 <?php

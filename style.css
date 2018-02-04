@@ -13,7 +13,7 @@ Tags: blog, one-column
 
 /**
  * @see https://codex.wordpress.org/CSS#WordPress_Generated_Classes
- *
+ * @see https://coolors.co/ffffff-eeb41e-fed947-0e3566-030817
  */
 /* =WordPress Core
 -------------------------------------------------------------- */
@@ -235,18 +235,18 @@ body > * {
 
 a:link {
 	text-decoration: none;
-	color: #006699;
+	color: #0E3566;
 }
 
 a:visited {
-	color: #666666;
+	color: #030817;
 }
 
 a:hover {
 	text-decoration: underline;
 }
 a:active {
-	color: #006699;
+	color: #0E3566;
 	text-decoration: underline;
 }
 
@@ -403,7 +403,7 @@ footer nav ul ul ul.children li:before {
 @media screen and (max-width:500px) {
 	body {
 		margin: 0;
-		padding: 10px;
+		padding: 20px 10px;
 		display: block;
 	}
 }
