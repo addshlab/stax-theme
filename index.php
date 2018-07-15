@@ -7,12 +7,22 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head profile="http://gmpg.org/xfn/11">
+
+<?php if ( is_active_sidebar( 'head-start' ) ) : ?>
+		<?php dynamic_sidebar( 'head-start' ); ?>
+<?php endif; ?>
+
 		<meta charset=<?php bloginfo('charset'); ?>>
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php echo date( 'U' ); ?>" type="text/css" media="all" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
 	</head>
+
+<?php if ( is_active_sidebar( 'before-body-start' ) ) : ?>
+		<?php dynamic_sidebar( 'before-body-start' ); ?>
+<?php endif; ?>
+
 <body <?php body_class(); ?>>
 
 <?php
@@ -163,4 +173,9 @@
 <?php wp_footer(); ?>
 
 </body>
+
+<?php if ( is_active_sidebar( 'after-body-end' ) ) : ?>
+		<?php dynamic_sidebar( 'after-body-end' ); ?>
+<?php endif; ?>
+
 </html>

@@ -131,6 +131,41 @@ function theme_slug_widgets_init() {
 		)
 
 	);
+	register_sidebar(
+		array(
+			'name' => __( 'Before <body> tag(Stax Theme)', 'stax' ),
+			'id' => 'before-body-start',
+			'description' => __( 'Insert the code before the <body> tag.', 'stax' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'After </body> tag(Stax Theme)', 'stax' ),
+			'id' => 'after-body-end',
+			'description' => __( 'Insert the code after the <body> tag.', 'stax' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Beginning of the <head> tag(Stax Theme)', 'stax' ),
+			'id' => 'head-start',
+			'description' => __( 'Insert the code at the beginning of the <head> tag.', 'stax' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+	);
+
 }
 add_action( 'widgets_init', 'theme_slug_widgets_init' );
 
