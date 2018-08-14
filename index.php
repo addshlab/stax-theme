@@ -108,7 +108,7 @@
 			<div class="excerpt">
 					<?php $str_count = mb_strlen( strip_tags( get_the_content() ) ); ?>
 					<?php echo mb_substr( strip_tags( get_the_content() ), 0, 10 ); ?><?php if ( $str_count === 0 ) : echo '(no content)' ; elseif ( $str_count >= 10 ) : echo ' ...'; endif; ?>
-					<?php echo $str_count . 'words.' ?>
+					<span class="content-word-count"><?php echo $str_count . 'words.' ?></span>
 				</div>
 			<?php endif; ?>
 <?php
