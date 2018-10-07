@@ -92,17 +92,25 @@ add_filter( 'pre_get_document_title', 'wpdocs_hack_wp_title_for_home' );
  * Meta Description のカスタマイズ
  */
  function add_meta_description() {
+ 	global $post;
+
  	if ( is_home() ) {
 		$content = get_bloginfo( 'description' );
-	} elseif ( is_single() ) {
-		$content = get_the_excerpt();
+	} elseif ( is_singular() ) {
+		if ( $post->post_except ) {
+			$content = esc_attr( $post->post_excerpt );
+		} else {
+			$content = esc_attr( strip_tags( $post->post_content ) );
+			$content = preg_replace( "/[\r\n]/", " ", $content );
+		 	$content = mb_strimwidth( $content, 0, 100, "..." );	
+		}
 	} else {
-		$content = '';
+		return;
 	}
 
  	echo '<meta name="description" content="' . $content . '">';
  }
- add_filter( 'wp_head', 'add_meta_description' );
+add_filter( 'wp_head', 'add_meta_description' );
 
 /**
  * ウィジェットエリアの定義
