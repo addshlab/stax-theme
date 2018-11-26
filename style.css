@@ -271,6 +271,10 @@ img {
 	height: auto;
 }
 
+article * {
+	vertical-align: middle;
+}
+
 article {
 	margin-bottom: 50px;
 }
@@ -310,6 +314,52 @@ header .title {
 	margin: 10px 0;
 	font-weight: bold;
 	font-size: 130%;
+}
+
+article header ul.header-meta {
+	margin: 0;
+	padding: 0;
+}
+
+.header-meta li {
+	list-style-type: none;
+	display: inline;
+	vertical-align: middle;
+}
+
+.header-meta .post-date,
+.header-meta .post-category {
+	margin-right: 10px;
+}
+
+.header-meta .post-date:before {
+	/*
+	 * https://developer.wordpress.org/resource/dashicons/#calendar-alt
+	 */
+	font-family: 'dashicons';
+	content: "\f508";
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.header-meta .post-category:before {
+	/*
+	 * https://developer.wordpress.org/resource/dashicons/#category
+	 */
+	font-family: 'dashicons';
+	content: "\f318";
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.header-meta .post-tag:before {
+	/*
+	 * https://developer.wordpress.org/resource/dashicons/#tag
+	 */
+	font-family: 'dashicons';
+	content: "\f323";
+	margin-right: 5px;
+	vertical-align: middle;
 }
 
 /**

@@ -51,6 +51,10 @@
 	<?php else : ?>
 	</p>
 	<?php endif; ?>
+
+	<?php if ( is_archive() ) : ?>
+		<h1><?php the_archive_title(); ?>の記事一覧</h1>
+	<?php endif; ?>
 </header>
 <?php
 /**
@@ -79,9 +83,19 @@
  */
 ?>
 				<?php if ( is_single() || is_page() ) : ?>
-				<time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>">
+				<ul class="header-meta">
+				<li class="post-date">
+					<time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>">
 					<?php the_time( 'Y-m-d' ); ?>
-				</time>
+					</time>
+				</li>
+				<?php if ( has_category() ) : ?>
+				<li class="post-category"><?php the_category( ', ' ); ?></li>
+				<?php endif; ?>
+				<?php if ( has_tag() ) : ?>
+				<li class="post-tag"><?php the_tags( '', ', ', '' ); ?></li>
+				<?php endif; ?>
+				</ul>
 				<h1 class="title">
 					<?php if ( mb_strlen( get_the_title() ) === 0 ) : echo '(no title)' ; else : the_title(); endif; ?>
 				</h1>
