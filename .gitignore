@@ -1,3 +1,4 @@
 *.sh
 .travis.yml
 stax-theme-test/
+stax-theme-test.zip
