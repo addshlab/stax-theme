@@ -1,0 +1,23 @@
+sudo: false
+language: php
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+branches:
+  only:
+  - master
+php:
+- 7.3
+before_deploy:
+- npm run build
+- npm run zip
+- export RELEASE_FILE=$(ls stax-theme-test.zip)
+deploy:
+  provider: releases
+  api_key:
+    secure: Exk/zB2T0GGbJpB6FBjw1yqNYfmwk7aqZgOeAGrgOy304dPaxIbnEDhbqv8kTY56sdRhWs5bpcL2oHpJ7HN0rWwjvzsBpXUSw6FzXIks2USEEjCVzny7sK4c7OXnBWQ8Rzo+elbIM4XuxM0BSfwk3g/w7dtuZzp1J/J5jQsI3yeVbXgg2wzEvOJqp3g+hL1NWO2ixdhSghgQ8GsZI7bXFDMMu1/GldBMDMZ1MrPtcnhF/ILhuhM2F2ruIr0d05cCOe4gCj+P//1ky/chXektnuy0BvjO4nFdIoMjfiQU6PaY+4e7A7EqpLYY5bClJZMwsPm5qimrzgFd1tDiu/uVTkG7x3859GGse725m6AQ2y61SBd6OnTJHKHPfEBrYfKc1HOQumn5SAvLLd1Kj0PBZmOOZLc5KLaweRvurRAqRptccDJ/GZrMSc6CBY+DMNc/nPuAuld9QJDFUEdzyJnZzoK6w9jZfo8cJxBai3I6F8Tw9/SQaIahWnvbTpIkVtImNj5250aTV1E7xaL8k6Si8b7DXeGg8Jmve1QBaa+1dtC+d5CwmmE0Vl+pKHhtSrnse5BpQuwPFkcbbhqxi8mKk7KRJZ0VAAByv3CBDV5LEN+uLHmjJYMcU/KXPrjJnBgQPBp0Rnu6OoU7wADYvtcuAbD0SMEwFoMikNo1FrxF6VU=
+  file: "${RELEASE_FILE}"
+  skip_cleanup: true
+  on:
+    repo: hackasassets/stax-theme
