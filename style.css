@@ -221,7 +221,7 @@ img.aligncenter {
 }
 
 body {
-	margin: 50px 0 50px 50px;
+	margin: 10px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	line-height: 1.7;
 	word-break: break-all;
@@ -367,13 +367,13 @@ article header ul.header-meta {
  * see https://css-tricks.com/snippets/css/a-guide-to-flexbox/
  * see https://codepen.io/chriscoyier/pen/vWEMWw
  */
-@media all and (min-width: 600px) {
+@media all and (min-width: 560px) {
 	.sidebar {
 		flex: 1 auto;
 	}
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 960px) {
 	.main {
 		flex: 2 0px;
 		order: 1;
@@ -381,6 +381,7 @@ article header ul.header-meta {
 	.sidebar {
 		order: 2;
 		margin-left: 30px;
+		flex-basis: 200px;
 	}
 	.global.footer {
 		order: 3;
